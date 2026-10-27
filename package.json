@@ -1,0 +1,19 @@
+{
+  "name": "pulse-track",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Full-stack bug & issue tracker (Jira/ClickUp-style)",
+  "scripts": {
+    "dev": "concurrently -n api,web -c magenta,cyan \"npm run dev -w @pulse/api\" \"npm run dev -w @pulse/web\"",
+    "build": "npm run build -w @pulse/web && npm run build -w @pulse/api",
+    "start": "npm run start -w @pulse/api",
+    "test": "npm run test -w @pulse/api"
+  },
+  "workspaces": [
+    "apps/api",
+    "apps/web"
+  ],
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
